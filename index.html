@@ -3,188 +3,239 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bucky’s Landscaping</title>
+<title>Bucky's Landscaping</title>
 
 <style>
-body {
-margin:0;
-font-family: Arial, sans-serif;
-background:#f2f6f3;
-color:#222;
+
+/* RESET */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* HEADER /
+body {
+  font-family: Arial, sans-serif;
+  background:#eef5ef;
+  color:#333;
+  line-height:1.6;
+}
+
+/* HEADER */
 header {
-background:#1e7f4f;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 20px;
+  background:#1e7f4f;
+  color:white;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 header h2 {
-margin:0;
+  font-size:22px;
 }
 
 nav a {
-color:white;
-margin:0 10px;
-text-decoration:none;
-font-weight:bold;
+  color:white;
+  margin:0 12px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.2s;
 }
 
-.call-btn {
-background:#2ecc71;
-padding:10px 15px;
-border-radius:5px;
-text-decoration:none;
-color:white;
-font-weight:bold;
+nav a:hover {
+  opacity:0.8;
 }
 
-/ HERO /
+.btn {
+  background:#2ecc71;
+  padding:10px 16px;
+  border-radius:6px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.2s;
+}
+
+.btn:hover {
+  background:#27ae60;
+}
+
+/* HERO */
 .hero {
-background:url('https://images.unsplash.com/photo-1598300053653-73c7b6f3f5b2');
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:120px 20px;
+  background-image:url('https://images.unsplash.com/photo-1598300053653-73c7b6f3f5b2');
+  background-size:cover;
+  background-position:center;
+  color:white;
+  text-align:center;
+  padding:140px 20px;
 }
 
 .hero h1 {
-font-size:40px;
-margin-bottom:10px;
+  font-size:42px;
+  margin-bottom:10px;
 }
 
 .hero p {
-font-size:18px;
+  font-size:18px;
 }
 
-.button {
-display:inline-block;
-margin-top:20px;
-padding:12px 20px;
-background:#2ecc71;
-color:white;
-text-decoration:none;
-border-radius:5px;
-font-weight:bold;
+.hero .cta {
+  display:inline-block;
+  margin-top:20px;
+  background:#2ecc71;
+  padding:14px 24px;
+  border-radius:6px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-/ SECTION /
+/* SECTIONS */
 .section {
-padding:50px 20px;
-text-align:center;
+  padding:70px 20px;
+  text-align:center;
 }
 
-/ SERVICES /
+.section h2 {
+  margin-bottom:20px;
+  font-size:28px;
+}
+
+/* SERVICES */
 .services {
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-.service {
-background:white;
-padding:20px;
-border-radius:10px;
-width:230px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
+.card {
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:230px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:0.2s;
 }
 
-/ GALLERY /
+.card:hover {
+  transform:translateY(-5px);
+}
+
+/* GALLERY */
+.gallery {
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
 .gallery img {
-width:300px;
-border-radius:10px;
-margin:10px;
+  width:300px;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:0.3s;
 }
 
-/ PRICE /
-.price {
-background:#1e7f4f;
-color:white;
-padding:40px;
-text-align:center;
-font-size:24px;
+.gallery img:hover {
+  transform:scale(1.05);
 }
 
-/ FOOTER /
+/* FOOTER */
 footer {
-background:#1e7f4f;
-color:white;
-padding:20px;
-text-align:center;
+  background:#1e7f4f;
+  color:white;
+  text-align:center;
+  padding:25px;
 }
+
+/* MOBILE */
+@media (max-width:768px) {
+  header {
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero h1 {
+    font-size:28px;
+  }
+
+  .gallery img {
+    width:90%;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h2>Bucky’s Landscaping</h2>
+  <h2>Bucky’s Landscaping</h2>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Work</a>
-<a href="#">Contact</a>
-</nav>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Work</a>
+    <a href="#">Contact</a>
+  </nav>
 
-<a href="tel:9782357795" class="call-btn">Call Now</a>
+  <a href="tel:9782357796" class="btn">Call Now</a>
 </header>
 
 <section class="hero">
-<h1>Professional Lawn Care You Can Count On</h1>
-<p>Biweekly mowing and reliable service to keep your lawn clean and healthy.</p>
-<a href="tel:9782357795" class="button">Call or Text for a Free Estimate</a>
+  <h1>Professional Lawn Care You Can Count On</h1>
+  <p>Biweekly mowing and reliable service to keep your lawn clean, healthy, and looking its best.</p>
+  <a href="tel:9782357796" class="cta">Call or Text for a Free Estimate</a>
 </section>
 
 <section class="section">
-<h2>Our Services</h2>
-
-<div class="services">
-<div class="service">
-<h3>Biweekly Mowing</h3>
-<p>Consistent mowing every other week.</p>
-</div>
-
-<div class="service">
-<h3>Yard Cleanup</h3>
-<p>Remove overgrowth and debris.</p>
-</div>
-
-<div class="service">
-<h3>Edging</h3>
-<p>Sharp clean edges every visit.</p>
-</div>
-</div>
-
+  <h2>About Us</h2>
+  <p>
+    Bucky’s Landscaping LLC is a locally owned business serving Clinton, Lancaster, 
+    and surrounding areas. We specialize in biweekly mowing, yard cleanups, and full lawn maintenance.
+  </p>
+  <p>
+    We take pride in clean, sharp, and reliable results every time. 
+    Call or text anytime for a free estimate.
+  </p>
 </section>
 
 <section class="section">
-<h2>Our Work</h2>
+  <h2>Our Services</h2>
 
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-</div>
-
-</section>
-
-<section class="price">
-Biweekly Mowing Starting at $65
+  <div class="services">
+    <div class="card">Biweekly Mowing</div>
+    <div class="card">Yard Cleanup</div>
+    <div class="card">Edging</div>
+    <div class="card">General Maintenance</div>
+  </div>
 </section>
 
 <section class="section">
-<h2>Service Area</h2>
-<p>Clinton, Lancaster & surrounding areas</p>
+  <h2>Our Work</h2>
+
+  <div class="gallery">
+    <img src="PASTE-YOUR-IMAGE-1">
+    <img src="PASTE-YOUR-IMAGE-2">
+    <img src="PASTE-YOUR-IMAGE-3">
+  </div>
 </section>
 
 <footer>
-<p>Call 978-235-7795</p>
+  <p>Serving Clinton, Lancaster & Surrounding Areas</p>
+  <p>Call or Text: 978-235-7796</p>
 </footer>
 
 </body>
